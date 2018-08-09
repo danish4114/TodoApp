@@ -1,0 +1,16 @@
+.list{
+  border:1px solid black;
+  padding: 5px 0;
+}
+label{
+  margin-left:5px;
+}
+.container{
+  margin-bottom: 0;
+}
+.badge{
+  float: right;
+  margin-right: 5px;
+  margin-top: 3PX;
+  font-size: 10px;
+}
