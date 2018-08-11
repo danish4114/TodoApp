@@ -7,7 +7,7 @@ import data from "./data.json";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { jsonData: data, value: "", id: 3 };
+    this.state = { jsonData: data, value: "", id: 3, newValue: "" };
   }
   targetHandler = e => {
     let clone = this.state.jsonData;
@@ -30,12 +30,18 @@ class App extends React.Component {
       this.setState({ value: "" });
     }
   };
+  editTodo = event => {
+    let dataClone = this.state.jsonData;
+    dataClone[event.target.id].text = event.target.value;
+    this.setState({ jsonData: dataClone });
+  };
   render() {
     return (
       <div>
         <Todo
           data={this.state.jsonData}
           function={e => this.targetHandler(e)}
+          forEdit={event => this.editTodo(event)}
         />
         <Addtodolist
           submit={event => this.inputSubmission(event)}
