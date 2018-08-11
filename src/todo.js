@@ -6,7 +6,7 @@ export default function Todo(props) {
   const result = _.map(content, (values, i) => {
     return (
       <div className="checkbox" key={values.id}>
-        <div className="list">
+        <div className="list" index={values.id} >
           <label>
             <input
               type="checkbox"
@@ -14,7 +14,7 @@ export default function Todo(props) {
               onChange={props.function}
               id={i}
             />
-            {values.text}
+           <input className='forEdit' type='text' value={values.text} id={i} onChange={props.forEdit} />
           </label>
           {values.completed && <span className="badge">completed</span>}
         </div>

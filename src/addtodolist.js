@@ -18,7 +18,8 @@ class Addtodolist extends React.Component {
           <button
             className="btn btn-normal"
             onClick={this.props.submit}
-            type="submit">
+            type="submit"
+          >
             Submit
           </button>
         </form>
